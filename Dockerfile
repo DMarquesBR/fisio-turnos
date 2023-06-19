@@ -1,17 +1,11 @@
 FROM node:16.20.0-alpine3.18
-MAINTAINER DMarquesBR
 
-RUN apt-get update -qq
-	&& apt-get upgrade -y -qq
-	&& apt-get -y install sqlite3 libsqlite3-dev
-
+RUN mkdir -p /home/node/app/node_modules && chown -R node:node /home/node/app
+WORKDIR /home/node/app
+COPY package*.json ./
+RUN npm install
+COPY . .
+COPY --chown=node:node . .
 USER node
-
-EXPOSE 8000
-
-VOLUME ["/data"]
-
-WORKDIR /data
-
-CMD ["bash"]
-
+EXPOSE 10000
+CMD [ "node", "server.js" ]

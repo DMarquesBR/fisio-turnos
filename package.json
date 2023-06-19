@@ -1,0 +1,22 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@replit/database": "^2.0.4",
+    "@types/node": "^18.0.6",
+    "mysql": "^2.18.1",
+    "node-fetch": "^3.2.6",
+    "sqlite3": "^5.1.6",
+    "uuid": "^9.0.0",
+    "xlsx": "^0.18.5"
+  }
+}
+
